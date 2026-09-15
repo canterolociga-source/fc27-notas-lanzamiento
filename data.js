@@ -1,0 +1,2 @@
+window.FC27_DATA = {"meta":{"title":"EA SPORTS FC™ 27 · Centro de consulta","source":"EA_SPORTS_FC_27.pdf","date":"14 de septiembre de 2026","pages":30},"pages":[]};
+/* Complete page data is generated below in the next commit. */
