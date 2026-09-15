@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07110d">
+  <title>EA SPORTS FC 27 — Notas de Lanzamiento</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap');
+
+    :root{
+      --bg:#07110d;
+      --bg2:#0b1712;
+      --panel:#0f2018;
+      --panel2:#13281f;
+      --green:#35f18a;
+      --green2:#17c968;
+      --gold:#d9b46a;
+      --text:#f3f8f5;
+      --muted:#9fb4aa;
+      --line:rgba(255,255,255,.1);
+      --shadow:0 24px 70px rgba(0,0,0,.35);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#050b08 70%);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1180px,92%);margin:auto}
+
+    header{position:sticky;top:0;z-index:50;background:rgba(5,12,9,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-family:Oswald,sans-serif;font-weight:700;letter-spacing:.08em;font-size:1rem}
+    .brand span{color:var(--green)}
+    nav ul{display:flex;gap:18px;list-style:none;padding:0;margin:0;overflow:auto}
+    nav a{font-size:.78rem;color:var(--muted);white-space:nowrap}
+    nav a:hover{color:var(--green)}
+
+    .hero{padding:90px 0 70px;background:
+      radial-gradient(circle at 15% 10%,rgba(53,241,138,.16),transparent 25%),
+      radial-gradient(circle at 85% 30%,rgba(217,180,106,.1),transparent 25%)}
+    .eyebrow{display:inline-block;color:var(--green);font-size:.75rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px}
+    h1,h2,h3{font-family:Oswald,sans-serif;text-transform:uppercase;line-height:1.05;margin:0}
+    h1{font-size:clamp(3rem,8vw,7rem);max-width:950px}
+    .hero p{max-width:780px;color:var(--muted);font-size:1.05rem;margin:24px 0 0}
+    .hero-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:24px;align-items:end}
+    .release-card,.info-card{background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}
+    .release-card{padding:24px}
+    .release-card strong{display:block;font-size:1.8rem;font-family:Oswald,sans-serif}
+    .release-card small{color:var(--muted)}
+
+    .section{padding:78px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px}
+    .section-head h2{font-size:clamp(2rem,5vw,3.3rem)}
+    .section-head p{margin:0;color:var(--muted);max-width:620px}
+
+    .dates{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .date{padding:22px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}
+    .date .num{font-family:Oswald,sans-serif;font-size:2rem;color:var(--green)}
+    .date strong{display:block;margin-top:5px}
+    .date span{display:block;color:var(--muted);font-size:.9rem}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{padding:28px;border:1px solid var(--line);border-radius:22px;background:var(--panel)}
+    .card .index{color:var(--green);font-family:Oswald,sans-serif;font-size:1.4rem}
+    .card h3{font-size:1.5rem;margin:9px 0 12px}
+    .card p{margin:0;color:var(--muted)}
+
+    .roadmap{display:grid;gap:14px}
+    .season{display:grid;grid-template-columns:180px 1fr auto;gap:20px;align-items:center;padding:20px 22px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}
+    .season .when{color:var(--gold);font-weight:700}
+    .season .name{font-family:Oswald,sans-serif;font-size:1.35rem;text-transform:uppercase}
+    .season .desc{color:var(--muted);font-size:.9rem}
+
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .feature{padding:30px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(145deg,var(--panel),var(--panel2))}
+    .feature h3{font-size:1.8rem;margin-bottom:14px}
+    .feature p,.feature li{color:var(--muted)}
+
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .stat{padding:22px;border-radius:18px;border:1px solid var(--line);background:var(--panel);text-align:center}
+    .stat strong{display:block;font-family:Oswald,sans-serif;color:var(--green);font-size:2.4rem}
+    .stat span{color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em}
+
+    .quote{margin-top:25px;padding:26px 28px;border-left:3px solid var(--green);background:rgba(53,241,138,.05);color:#dce8e2}
+
+    footer{padding:40px 0 70px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+
+    @media(max-width:900px){
+      .hero-grid,.split{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+      .dates{grid-template-columns:1fr}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .season{grid-template-columns:1fr}
+    }
+    @media(max-width:560px){
+      nav ul{gap:13px}
+      .hero{padding-top:58px}
+      .section{padding:58px 0}
+      .stats{grid-template-columns:1fr 1fr}
+      h1{font-size:3.3rem}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top">FC <span>27</span> / NOTAS</a>
+      <nav>
+        <ul>
+          <li><a href="#fechas">Fechas</a></li>
+          <li><a href="#fut">FUT</a></li>
+          <li><a href="#temporadas">Temporadas</a></li>
+          <li><a href="#grounds">The Grounds</a></li>
+          <li><a href="#carrera">Carrera</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">EA SPORTS FC™ 27</div>
+          <h1>ACTUALIZACIÓN DE LANZAMIENTO</h1>
+          <p>Una guía web de las novedades, sistemas, recompensas y contenidos destacados de FC 27, basada en las notas de lanzamiento del 14 de septiembre de 2026.</p>
+        </div>
+        <div class="release-card">
+          <small>Documento base</small>
+          <strong>14 SEP 2026</strong>
+          <span>Preparado para el lanzamiento de FC 27</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fechas">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="eyebrow">01 / Lanzamiento</div><h2>Fechas clave</h2></div>
+          <p>Consulta de un vistazo las principales fechas de aplicación web, acceso anticipado, EA Play y lanzamiento mundial.</p>
+        </div>
+        <div class="dates">
+          <article class="date"><div class="num">16 SEP</div><strong>Aplicación web</strong><span>17:00 UTC</span></article>
+          <article class="date"><div class="num">17 SEP</div><strong>Aplicación complementaria</strong><span>17:00 UTC</span></article>
+          <article class="date"><div class="num">18 SEP</div><strong>Acceso anticipado</strong><span>Ultimate Edition / Ultimate+ según plataforma y horario regional</span></article>
+          <article class="date"><div class="num">17 SEP</div><strong>EA Play Pro</strong><span>23:00 UTC</span></article>
+          <article class="date"><div class="num">18 SEP</div><strong>Prueba de EA Play</strong><span>Prueba de 10 horas · 04:00 UTC</span></article>
+          <article class="date"><div class="num">25 SEP</div><strong>Lanzamiento mundial</strong><span>PC 24 SEP 23:00 UTC / otras plataformas 25 SEP 00:00 hora regional</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fut">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="eyebrow">02 / Football Ultimate Team™</div><h2>Tres ideas para FUT</h2></div>
+        </div>
+        <div class="grid3">
+          <article class="card"><div class="index">01</div><h3>Más opciones</h3><p>Más flexibilidad para construir el club, con mayor enfoque en recompensas intercambiables, Monedas FUT, SBC, Evoluciones y Campañas.</p></article>
+          <article class="card"><div class="index">02</div><h3>Identidad de los jugadores</h3><p>Progresión más medida, menos Campañas y mejoras más específicas para preservar las cualidades que hacen diferentes a los jugadores.</p></article>
+          <article class="card"><div class="index">03</div><h3>Cada partido cuenta</h3><p>Los partidos elegibles aportan más Monedas FUT y Puntos de Temporada para que jugar haga avanzar directamente al Club.</p></article>
+        </div>
+
+        <div class="section-head" style="margin-top:56px">
+          <div><div class="eyebrow">Impacto en la construcción</div><h2>Datos destacados</h2></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>3</strong><span>máximo de estilos de juego+</span></div>
+          <div class="stat"><strong>15</strong><span>jugadores en Destinados a la Gloria</span></div>
+          <div class="stat"><strong>15–100</strong><span>puntos de temporada por partido elegible</span></div>
+          <div class="stat"><strong>850</strong><span>máximo diario de puntos de temporada</span></div>
+        </div>
+        <div class="quote">En FC 27, la filosofía general de FUT pone el foco en más caminos para mejorar el club y en que el tiempo invertido jugando tenga un impacto más directo en la progresión.</div>
+      </div>
+    </section>
+
+    <section class="section" id="temporadas">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="eyebrow">03 / Hoja de ruta</div><h2>Temporada 1</h2></div>
+          <p>La primera temporada conecta sus campañas alrededor de jugadores preparados para dejar huella en la nueva temporada futbolística.</p>
+        </div>
+        <div class="roadmap">
+          <article class="season"><div class="when">17 SEP → 22 OCT</div><div><div class="name">Ones to Watch</div><div class="desc">Acceso anticipado, Pase de Temporada, SBC y mejoras vinculadas al rendimiento real.</div></div><div>01</div></article>
+          <article class="season"><div class="when">25 SEP</div><div><div class="name">Destinados a la Gloria</div><div class="desc">Jugadores votados por la comunidad y mejoras durante toda la temporada futbolística.</div></div><div>02</div></article>
+          <article class="season"><div class="when">TEMPORADA 1</div><div><div class="name">Futuras Estrellas</div><div class="desc">Parte del recorrido temático de la Temporada 1 junto a Ones to Watch y Destinados a la Gloria.</div></div><div>03</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="grounds">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="eyebrow">04 / Clubes</div><h2>The Grounds</h2></div>
+          <p>Nuevo hogar de los Clubes en FC 27, con Liga, Playoff, Rush y nuevas formas de competir y desarrollar a tu Pro.</p>
+        </div>
+        <div class="split">
+          <article class="feature"><h3>Arquetipos</h3><p>Los Arquetipos siguen siendo el corazón del desarrollo del Pro. Los partidos generan AXP y Monedas de The Grounds, mientras que los Objetivos ofrecen más vías de progreso.</p></article>
+          <article class="feature"><h3>Eventos de temporada</h3><p>La Temporada 1 introduce experiencias como European Nights y Screaming Grounds, con eventos en vivo, recompensas y una ambientación temática.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="carrera">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="eyebrow">05 / Modo Carrera</div><h2>Manager Live</h2></div>
+          <p>El Modo Carrera amplía sus posibilidades con desafíos desde el lanzamiento y nuevas experiencias impulsadas por la comunidad.</p>
+        </div>
+        <div class="grid3">
+          <article class="card"><div class="index">01</div><h3>Astucia en el Mercado</h3><p>Comienza la temporada con una gestión inteligente de la ventana de traspasos.</p></article>
+          <article class="card"><div class="index">02</div><h3>Comienzo Ganador</h3><p>Mantente invicto en las primeras semanas y gana al menos tres partidos.</p></article>
+          <article class="card"><div class="index">03</div><h3>Líder en Navidad</h3><p>Alcanza el liderato de tu liga cuando llegue la Navidad.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">EA SPORTS FC™ 27 · Página creada a partir de las notas de lanzamiento del 14 de septiembre de 2026.</div>
+  </footer>
+</body>
+</html>
