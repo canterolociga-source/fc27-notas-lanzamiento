@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#07110d">
 <meta name="description" content="Centro de consulta personal de EA SPORTS FC™ 27 — Actualización de Lanzamiento.">
 <title>EA SPORTS FC™ 27 · Centro de consulta</title>
-<link rel="stylesheet" href="styles.css?v=20260915-6">
+<link rel="stylesheet" href="styles.css?v=20260915-7">
 </head>
 <body>
 <div id="progress" class="progress"></div>
@@ -27,6 +27,19 @@
 </div>
 <main id="app"></main>
 <button id="toTop" class="to-top" aria-label="Volver arriba">↑</button>
-<script src="data.js?v=20260915-6"></script><script src="app.js?v=20260915-6"></script>
+<script src="data.js?v=20260915-7"></script><script src="app.js?v=20260915-7"></script>
+<script>
+(()=>{
+  const removeAllPages=()=>document.querySelectorAll('#app a,#app h1,#app h2,#app h3,#app h4,#app strong,#app span').forEach(el=>{
+    const text=el.textContent.trim();
+    if(text==='Todas las páginas'||text==='Índice completo'){
+      const card=el.closest('.toc-card,.topic-card,.section-tile,.section,.view-head');
+      if(card) card.remove();
+    }
+  });
+  new MutationObserver(removeAllPages).observe(document.getElementById('app'),{childList:true,subtree:true});
+  removeAllPages();
+})();
+</script>
 </body>
 </html>
